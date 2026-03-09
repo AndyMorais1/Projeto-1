@@ -1,6 +1,7 @@
 #ifndef DISPLAY_DEVICE_H
 #define DISPLAY_DEVICE_H
 
+
 #include <TFT_eSPI.h> // Biblioteca base
 
 class Display {
@@ -10,6 +11,8 @@ public:
     Display();
     void begin(); // Método de inicialização que o Orquestrador vai chamar
     void clear(); // Limpa o ecrã
+    void powerOn();
+    void powerOff();
 };
 
 #endif

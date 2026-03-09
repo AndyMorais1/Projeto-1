@@ -5,18 +5,32 @@
 
 class UIEngine {
 private:
-    TFT_eSPI* _tft; // Ponteiro para o objeto tft que vive no DisplayDevice
+    TFT_eSPI* _tft;
+    
+    // Configurações de layout (256x256 centrada num ecrã 480x320)
+    const int imgX = 112;
+    const int imgY = 32;
+    const int imgDim = 256;
+
+    // Cores personalizadas
+    const uint16_t COR_PADRAO = 0xAEDC; 
 
 public:
-    // Recebe a instância do hardware no construtor
     UIEngine(TFT_eSPI* tftInstance);
 
-    void drawBootScreen();              // Tela de carregamento
-    void drawIdleScreen();              // Tela de espera (sem objeto)
-    void drawAlertScreen(float dist);   // Tela de alerta (objeto detetado)
+    // Métodos para cada estado do fluxo
+    void drawWarning();
+    void drawSoap();
+    void drawDry();
+    void drawProtect();
+    void drawCongrats();
+    void drawWet();
+    void drawScrub();
+    void drawRinse();
+    void drawTimer(int seconds);
+    void drawInitialScreen();
     
-    // Método para animações (chamado repetidamente no loop)
-    void updateAnimation(); 
+    void clearScreen(uint16_t color);
 };
 
 #endif
