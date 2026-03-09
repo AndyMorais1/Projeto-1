@@ -18,7 +18,6 @@ void SystemLogic::setup() {
     // 2. Chamar o .begin() / .init() de cada instância
     // A ordem importa: Display primeiro para dar feedback
     display.begin();
-    ui.drawBootScreen();
 
     // Sensores e Botões
     sensor.begin();
