@@ -3,7 +3,7 @@
 #include "Led.h"
 #include "AudioManager.h"
 void setup() {
-
+  void playAlert();
 
 }
 
