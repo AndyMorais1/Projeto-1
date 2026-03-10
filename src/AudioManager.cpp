@@ -1,7 +1,7 @@
 #include "AudioManager.h"
 
 AudioManager::AudioManager(HardwareSerial* serial, uint8_t rx, uint8_t tx) 
-    : _serial(serial), _rx(rx), _tx(tx), _volume(20) {}
+    : _serial(serial), _rx(rx), _tx(tx), _volume(40) {}
 
 void AudioManager::begin() {
     // 1. Inicia a porta Serial2 com os pinos definidos no Config.h
@@ -30,6 +30,7 @@ void AudioManager::begin() {
 
 void AudioManager::playAlert() {
     // Espaço para tocar track de alerta
+    _player.playMp3Folder(1);
 }
 
 void AudioManager::setVolume(int vol) {
