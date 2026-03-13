@@ -17,8 +17,15 @@ public:
 
     void begin();
     void playAlert();
+    void startSound();
+    void wetHands ();
+    void rubHands();
+    void dryHands();
+    void soap();
+    void conclusion();
+    void notStop();
     void setVolume(int vol);
-    void nextVolume(); // Alterna entre níveis de volume pré-definidos
+     // Alterna entre níveis de volume pré-definidos
     void stop();
 };
 

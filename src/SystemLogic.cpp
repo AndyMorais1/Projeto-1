@@ -1,15 +1,15 @@
 #include "SystemLogic.h"
 
 // Lista de Inicialização: associa cada pino do Config.h ao respetivo objeto
-SystemLogic::SystemLogic() : 
-    ui(&display.tft),                               // Injeta a instância da TFT_eSPI na UI
-    sensor(US_TRIG_PIN, US_ECHO_PIN),             // Pinos 12 e 14
-    btn1(BTN_1_PIN),                              // Pino 34
-    btn2(BTN_2_PIN),                              // Pino 35
-    audio(&Serial2, DF_RX_PIN, DF_TX_PIN),         // Serial2, pinos 16 e 17
-    led1(LED_1_PIN), led2(LED_2_PIN), led3(LED_3_PIN), // LEDs 13, 27, 26
-    led4(LED_4_PIN), led5(LED_5_PIN), led6(LED_6_PIN)  // LEDs 25, 33, 22
-{}
+// SystemLogic::SystemLogic() : 
+//     ui(&display.tft),                               // Injeta a instância da TFT_eSPI na UI
+//     sensor(US_TRIG_PIN, US_ECHO_PIN),             // Pinos 12 e 14
+//     btn1(BTN_1_PIN),                              // Pino 34
+//     btn2(BTN_2_PIN),                              // Pino 35
+//     audio(&Serial2, DF_RX_PIN, DF_TX_PIN),         // Serial2, pinos 16 e 17
+//     led1(LED_1_PIN), led2(LED_2_PIN), led3(LED_3_PIN), // LEDs 13, 27, 26
+//     led4(LED_4_PIN), led5(LED_5_PIN), led6(LED_6_PIN)  // LEDs 25, 33, 22
+// {}
 
 void SystemLogic::setup() {
     // 1. Iniciar Comunicação Serial para Debug (opcional)

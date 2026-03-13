@@ -22,22 +22,22 @@
 // 3. ÁUDIO (DFPlayer Mini)
 // =================================================================
 // Usando a Hardware Serial 2 do ESP32
-#define DF_RX_PIN      16
-#define DF_TX_PIN      17
+#define DF_RX_PIN      27
+#define DF_TX_PIN      26
 
 // =================================================================
 // 4. LEDS (6 Unidades)
 // =================================================================
 // Escolhidos pinos que não interferem no Boot ou SPI
 #define LED_1_PIN      13
-#define LED_2_PIN      27
-#define LED_3_PIN      26
+// #define LED_2_PIN      27
+// #define LED_3_PIN      26
 #define LED_4_PIN      25
 #define LED_5_PIN      33
 #define LED_6_PIN      22
 
 // Agrupamento para facilitar inicialização por array, se necessário
-const uint8_t ALL_LEDS[] = {LED_1_PIN, LED_2_PIN, LED_3_PIN, LED_4_PIN, LED_5_PIN, LED_6_PIN};
+const uint8_t ALL_LEDS[] = {LED_1_PIN, LED_4_PIN, LED_5_PIN, LED_6_PIN};
 const uint8_t NUM_LEDS = 6;
 
 // =================================================================
