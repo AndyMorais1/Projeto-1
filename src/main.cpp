@@ -1,40 +1,35 @@
 #include <Arduino.h>
-#include "Config.h"
-#include "AudioManager.h"
+#include "Display.h"
+#include "UIEngine.h"
 
-// ============================================================
-// INSTÂNCIAS GLOBAIS
-// ============================================================
-
-AudioManager audio(&Serial2, DF_RX_PIN, DF_TX_PIN);
-
-// ============================================================
-// SETUP
-// ============================================================
+// Instâncias
+Display dispositivo;
+UIEngine ui(&dispositivo.tft);
 
 void setup() {
+    Serial.begin(115200);
+    dispositivo.begin();
+    
+    // --- CICLO ÚNICO ---
+    ui.drawInitialScreen();
+    delay(2000);
 
-  Serial.begin(115200);
-  delay(1000);
+    for (int i = 5; i >= 0; i--) {
+        ui.drawTimer(i);
+        delay(1000);
+    }
 
-  Serial.println("A iniciar o sistema...");
+    ui.drawCongrats();
+    delay(2000);
 
-  // iniciar DFPlayer
-  audio.begin();
+    ui.drawWarning();
+    delay(2000);
 
-  delay(3000);
-
-  // tocar primeiro áudio
-  audio.startSound();
-
-  Serial.println("Sistema pronto!");
+    // --- DESLIGAR DISPLAY ---
+    Serial.println("Ciclo terminado. Desligando backlight...");
+    dispositivo.powerOff();
 }
 
-// ============================================================
-// LOOP
-// ============================================================
-
 void loop() {
-
-  // vazio para testes
+    // Fica vazio para o código não repetir
 }
