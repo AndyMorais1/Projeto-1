@@ -6,19 +6,16 @@
 class UIEngine {
 private:
     TFT_eSPI* _tft;
-    
-    // Configurações de layout (256x256 centrada num ecrã 480x320)
-    const int imgX = 112;
-    const int imgY = 32;
-    const int imgDim = 256;
 
-    // Cores personalizadas
-    const uint16_t COR_PADRAO = 0xAEDC; 
+    // Imagens fullscreen para ecrã 480x320
+    static const int imgX = 0;
+    static const int imgY = 0;
+    static const int imgW = 480;
+    static const int imgH = 320;
 
 public:
     UIEngine(TFT_eSPI* tftInstance);
 
-    // Métodos para cada estado do fluxo
     void drawWarning();
     void drawSoap();
     void drawDry();
@@ -27,9 +24,8 @@ public:
     void drawWet();
     void drawScrub();
     void drawRinse();
-    void drawTimer(int seconds);
     void drawInitialScreen();
-    
+
     void clearScreen(uint16_t color);
 };
 

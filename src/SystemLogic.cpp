@@ -29,7 +29,7 @@ void SystemLogic::setup() {
     led4.begin(); led5.begin(); led6.begin();
     
     // Áudio (pode demorar um pouco a estabilizar)
-    audio.begin();
+    //audio.begin();
 
     Serial.println("SystemLogic: Todos os componentes foram instanciados e iniciados.");
 }

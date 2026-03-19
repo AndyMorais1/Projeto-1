@@ -22,7 +22,7 @@ private:
     Button        btn2;   // SW3
 
     // --- Áudio ---
-    AudioManager  audio;
+    //AudioManager  audio;
 
     // --- LEDs Individuais ---
     Led led1, led2, led3, led4, led5, led6;

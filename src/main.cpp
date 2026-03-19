@@ -1,42 +1,60 @@
 #include <Arduino.h>
 #include "Display.h"
 #include "UIEngine.h"
-#include "config.h"
+#include "Config.h"
 #include "AudioManager.h"
 
 // Instâncias
 Display dispositivo;
 UIEngine ui(&dispositivo.tft);
-AudioManager audio(&Serial2, DF_RX_PIN, DF_TX_PIN);
+//AudioManager audio(&Serial2, DF_RX_PIN, DF_TX_PIN);
 
 void setup() {
     Serial.begin(115200);
     delay(1000);
     dispositivo.begin();
 
-     // iniciar DFPlayer
-    audio.begin();
-
-    delay(3000);
-
-    // tocar primeiro áudio
-    audio.startSound();
-
-    
     // --- CICLO ÚNICO ---
     ui.drawInitialScreen();
-    delay(2000);
+    delay(3000);
 
-    for (int i = 5; i >= 0; i--) {
-        ui.drawTimer(i);
-        delay(1000);
-    }
+    ui.drawWet();
+    delay(6000);
+
+     ui.drawProtect();
+    delay(10000);
+
+    ui.drawSoap();
+    delay(4000);
+
+    ui.drawProtect();
+    delay(10000);
+
+    ui.drawScrub();
+    delay(15000);
+
+    ui.drawProtect();
+    delay(10000);
+
+    ui.drawRinse();
+    delay(10000);
+
+    ui.drawProtect();
+    delay(10000);
+
+    ui.drawDry();
+    delay(8000);
+
+    ui.drawProtect();
+    delay(10000);
 
     ui.drawCongrats();
-    delay(2000);
+    delay(3000);
 
     ui.drawWarning();
     delay(2000);
+
+    
 
     // --- DESLIGAR DISPLAY ---
     Serial.println("Ciclo terminado. Desligando backlight...");

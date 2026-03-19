@@ -1,4 +1,5 @@
 #include "UIEngine.h"
+
 // Incluímos as imagens aqui para que a classe as conheça
 #include "warning_image.h"
 #include "soap_image.h"
@@ -20,63 +21,37 @@ void UIEngine::clearScreen(uint16_t color) {
 }
 
 void UIEngine::drawWarning() {
-    _tft->fillScreen(COR_PADRAO); 
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, warning_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, warning_map);
 }
 
 void UIEngine::drawSoap() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, soap_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, soap_map);
 }
 
 void UIEngine::drawDry() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, dry_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, dry_map);
 }
 
 void UIEngine::drawProtect() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, protect_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, protect_map);
 }
 
 void UIEngine::drawCongrats() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, congrats_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, congrats_map);
 }
 
 void UIEngine::drawWet() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, wet_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, wet_map);
 }
 
 void UIEngine::drawScrub() {
-    _tft->fillScreen(COR_PADRAO); 
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, scrub_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, scrub_map);
 }
 
 void UIEngine::drawRinse() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, rinse_map);
-}
-
-// deve ser chamado dentro de um loop para atualizar o timer em tempo real
-void UIEngine::drawTimer(int seconds) {
-    
-    _tft->fillRect(imgX, imgY, imgDim, imgDim, COR_PADRAO);
-    _tft->setTextDatum(MC_DATUM); 
-    _tft->setTextColor(TFT_WHITE, COR_PADRAO);
-    _tft->setTextSize(8);
-    _tft->drawNumber(seconds, 240, 160);
+    _tft->pushImage(imgX, imgY, imgW, imgH, rinse_map);
 }
 
 void UIEngine::drawInitialScreen() {
-    _tft->fillScreen(COR_PADRAO);
-    _tft->pushImage(imgX, imgY, imgDim, imgDim, init_map);
+    _tft->pushImage(imgX, imgY, imgW, imgH, init_map);
 }
-
-/*
- for (int i = 20; i >= 0; i--) {
-        ui.drawTimer(i);
-        delay(1000); // Contagem de 1 segundo
-    }
-*/
