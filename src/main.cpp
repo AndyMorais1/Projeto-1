@@ -1,13 +1,13 @@
 #include <Arduino.h>
 #include "Display.h"
 #include "UIEngine.h"
-#include "Config.h"
+#include "config.h"
 #include "AudioManager.h"
 
 // Instâncias
 Display dispositivo;
 UIEngine ui(&dispositivo.tft);
-//AudioManager audio(&Serial2, DF_RX_PIN, DF_TX_PIN);
+AudioManager audio(&Serial2, DF_RX_PIN, DF_TX_PIN);
 
 void setup() {
     Serial.begin(115200);
@@ -15,6 +15,16 @@ void setup() {
     dispositivo.begin();
 
     // --- CICLO ÚNICO ---
+
+
+    ui.drawWarning();
+    delay(3000);
+
+    audio.begin();
+    delay(3000);
+
+    audio.startSound();
+
     ui.drawInitialScreen();
     delay(3000);
 
@@ -53,6 +63,8 @@ void setup() {
 
     ui.drawWarning();
     delay(2000);
+
+     
 
     
 
