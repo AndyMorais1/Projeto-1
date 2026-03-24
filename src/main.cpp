@@ -13,24 +13,56 @@ void setup() {
     Serial.begin(115200);
     dispositivo.begin();
 
-     // iniciar DFPlayer
+    // --- CICLO ÚNICO ---
+    ui.drawInitialScreen();
+    delay(3000);
+    
     audio.begin();
-
     delay(3000);
 
-    // tocar primeiro áudio
     audio.startSound();
 
     
-    // --- CICLO ÚNICO ---
-    ui.drawInitialScreen();
-    delay(2000);
+
+    ui.drawWet();
+    delay(6000);
+
+     ui.drawProtect();
+    delay(10000);
+
+    ui.drawSoap();
+    delay(4000);
+
+    ui.drawProtect();
+    delay(10000);
+
+    ui.drawScrub();
+    delay(15000);
+
+    ui.drawProtect();
+    delay(10000);
+
+    ui.drawRinse();
+    delay(10000);
+
+    ui.drawProtect();
+    delay(10000);
+
+    ui.drawDry();
+    delay(8000);
+
+    ui.drawProtect();
+    delay(10000);
 
     ui.drawCongrats();
-    delay(2000);
+    delay(3000);
 
     ui.drawWarning();
     delay(2000);
+
+     
+
+    
 
     // --- DESLIGAR DISPLAY ---
     Serial.println("Ciclo terminado. Desligando backlight...");

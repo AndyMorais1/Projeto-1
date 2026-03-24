@@ -1,4 +1,5 @@
 #include "Display.h"
+#include "config.h"
 
 Display::Display() : tft(TFT_eSPI()) {}
 

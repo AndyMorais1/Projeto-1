@@ -2,7 +2,7 @@
 #define SYSTEM_LOGIC_H
 
 #include <Arduino.h>
-#include "Config.h"
+#include "config.h"
 #include "Display.h"
 #include "UIEngine.h"
 #include "Ultrasonic.h"
@@ -22,7 +22,7 @@ private:
     Button        btn2;   // SW3
 
     // --- Áudio ---
-    AudioManager  audio;
+    //AudioManager  audio;
 
     // --- LEDs Individuais ---
     Led led1, led2, led3, led4, led5, led6;

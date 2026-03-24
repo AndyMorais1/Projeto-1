@@ -1,7 +1,7 @@
 #include "AudioManager.h"
 
 AudioManager::AudioManager(HardwareSerial* serial, uint8_t rx, uint8_t tx) 
-    : _serial(serial), _rx(rx), _tx(tx), _volume(5) {}
+    : _serial(serial), _rx(rx), _tx(tx), _volume(20) {}
 
 void AudioManager::begin() {
     // 1. Inicia a porta Serial2 com os pinos definidos no Config.h
@@ -23,7 +23,7 @@ void AudioManager::begin() {
 
     // 3. Configuração inicial após sucesso
     // _player.setTimeOut(500); // Timeout para comandos
-    _player.volume(20); // Define o volume inicial (0-30)
+    _player.volume(3); // Define o volume inicial (0-30)
     _player.EQ(DFPLAYER_EQ_NORMAL);
     // _player.outputDevice(DFPLAYER_DEVICE_SD);
 
@@ -33,10 +33,10 @@ void AudioManager::begin() {
 
 void AudioManager::startSound() {
 
-for (int i = 1; i <= 7; i++) {
-        Serial.printf("Tocando faixa %d...\n", i);
-        _player.play(i);
-        delay(30000); // Espera 30 segundos cada música
+    for (int i = 1; i <= 7; i++) {
+            Serial.printf("Tocando faixa %d...\n", i);
+            _player.play(i);
+            delay(30000); // Espera 30 segundos cada música
     }
 }
 
