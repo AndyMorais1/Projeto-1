@@ -11,7 +11,6 @@ AudioManager audio(&Serial2, DF_RX_PIN, DF_TX_PIN);
 
 void setup() {
     Serial.begin(115200);
-    delay(1000);
     dispositivo.begin();
 
      // iniciar DFPlayer
@@ -26,11 +25,6 @@ void setup() {
     // --- CICLO ÚNICO ---
     ui.drawInitialScreen();
     delay(2000);
-
-    for (int i = 5; i >= 0; i--) {
-        ui.drawTimer(i);
-        delay(1000);
-    }
 
     ui.drawCongrats();
     delay(2000);
