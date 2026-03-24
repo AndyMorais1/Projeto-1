@@ -23,7 +23,7 @@ void AudioManager::begin() {
 
     // 3. Configuração inicial após sucesso
     // _player.setTimeOut(500); // Timeout para comandos
-    _player.volume(3); // Define o volume inicial (0-30)
+    _player.volume(_volume); // Define o volume inicial (0-30)
     _player.EQ(DFPLAYER_EQ_NORMAL);
     // _player.outputDevice(DFPLAYER_DEVICE_SD);
 
@@ -33,43 +33,40 @@ void AudioManager::begin() {
 
 void AudioManager::startSound() {
 
-    for (int i = 1; i <= 7; i++) {
-            Serial.printf("Tocando faixa %d...\n", i);
-            _player.play(i);
-            delay(30000); // Espera 30 segundos cada música
-    }
+    Serial.println("Playing 001.mp3");
+    _player.play(1);
 }
 
 void AudioManager:: wetHands (){
     Serial.println("Playing 002.mp3");
-    _player.playMp3Folder(2);
+    _player.play(2);
 }
 
 void AudioManager:: soap(){
     Serial.println("Playing 003.mp3");
-    _player.playMp3Folder(3);
+    _player.play(3);
 }
 
 void AudioManager:: rubHands(){
-    _player.playMp3Folder(4);
+    _player.play(4);
 }
 void AudioManager:: dryHands(){
-    _player.playMp3Folder(5);
+    _player.play(5);
 }
 
 void AudioManager:: conclusion(){
-    _player.playMp3Folder(6);
+    _player.play(6);
 }
 
-void AudioManager:: notStop(){
-    _player.playMp3Folder(7);
-}
+// void AudioManager:: notStop(){
+//     _player.playMp3Folder(7);
+// }
 
-void AudioManager::setVolume(int vol) {
-    // Espaço para ajustar volume do módulo
-}
+// void AudioManager::setVolume(int vol) {
+//     // Espaço para ajustar volume do módulo
+// }
 
 
-void AudioManager::stop() {
-    // Espaço para parar áudio
-}
+// void AudioManager::stop() {
+//     // Espaço para parar áudio
+// }

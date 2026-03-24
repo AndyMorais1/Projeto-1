@@ -19,46 +19,62 @@ void setup() {
     
     audio.begin();
     delay(3000);
-
     audio.startSound();
-
-    
+    delay(27000);
 
     ui.drawWet();
     delay(6000);
 
-     ui.drawProtect();
-    delay(10000);
+    audio.wetHands();
+    delay(30000);
+
+    ui.drawProtect();
+    delay(3000);
 
     ui.drawSoap();
-    delay(4000);
+    delay(30000);
+
+    audio.soap();
+    delay(30000);
 
     ui.drawProtect();
-    delay(10000);
+    delay(3000);
 
     ui.drawScrub();
-    delay(15000);
+    delay(30000);
+
+    audio.rubHands();
+    delay(30000);
 
     ui.drawProtect();
-    delay(10000);
+    delay(3000);
 
     ui.drawRinse();
-    delay(10000);
+    delay(30000);
+
+    audio.wetHands();
+    delay(30000);
 
     ui.drawProtect();
-    delay(10000);
+    delay(3000);
 
     ui.drawDry();
     delay(8000);
 
+    audio.dryHands();
+    delay(30000);
+
     ui.drawProtect();
-    delay(10000);
+    delay(3000);
+
 
     ui.drawCongrats();
     delay(3000);
 
-    ui.drawWarning();
-    delay(2000);
+    audio.conclusion();
+
+    // ui.drawWarning();
+    // delay(2000);
 
      
 
