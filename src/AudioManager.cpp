@@ -33,10 +33,10 @@ void AudioManager::begin() {
 
 void AudioManager::startSound() {
 
-for (int i = 1; i <= 7; i++) {
-        Serial.printf("Tocando faixa %d...\n", i);
-        _player.play(i);
-        delay(30000); // Espera 30 segundos cada música
+    for (int i = 1; i <= 7; i++) {
+            Serial.printf("Tocando faixa %d...\n", i);
+            _player.play(i);
+            delay(30000); // Espera 30 segundos cada música
     }
 }
 

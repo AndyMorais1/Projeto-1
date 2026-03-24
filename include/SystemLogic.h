@@ -2,7 +2,7 @@
 #define SYSTEM_LOGIC_H
 
 #include <Arduino.h>
-#include "Config.h"
+#include "config.h"
 #include "Display.h"
 #include "UIEngine.h"
 #include "Ultrasonic.h"

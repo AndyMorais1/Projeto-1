@@ -15,18 +15,15 @@ void setup() {
     dispositivo.begin();
 
     // --- CICLO ÚNICO ---
-
-
-    ui.drawWarning();
+    ui.drawInitialScreen();
     delay(3000);
-
+    
     audio.begin();
     delay(3000);
 
     audio.startSound();
 
-    ui.drawInitialScreen();
-    delay(3000);
+    
 
     ui.drawWet();
     delay(6000);
